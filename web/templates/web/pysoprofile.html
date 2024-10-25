@@ -1,0 +1,307 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body %}
+  <div class="profileA-card">
+    <div class="profileA-header">
+      <img src="{% static 'pyso1.jpg'%}" alt="ProfileA Picture" class="profileA-image">
+      <div class="profileA-info">
+        <h2 class="profileA-name">Ms. Sonali Goswami</h2>
+        <p class="profileA-role">MA - Applied Psychology</p>
+        <p class="profileA-department">TherapistCounselling Psychologist</p>
+        <p class="profileA-location">Location Mira Road</p>
+        <p class="profileA-location">9 Years Experience Overall</p>
+        <a href="mailto:sonaligoswami@gmail.com" class="profileA-email">sonaligoswami@gmail.com</a>
+      </div>
+    </div>
+    <div class="profileA-bio">
+      <p>Ms Sonali Goswami is a Psychologist (an alumna of TISS, Mumbai). She takes face to face and online counselling
+        sessions, both.</p>
+
+      <p>Her organisational work experience includes working with schools as a Psychologist, NGOs, managing crowd
+        funding website, working as a Life Skills Educator, delivering lectures in various Delhi NCR colleges such as
+        KNMIPER, AKGEC, MIT etc.</p>
+
+      <p>In 2019, she founded her own mental health organisation, based out of Gurgaon and started her private practice
+        as a Psychologist. In 2020, she shifted her base to Mumbai.
+
+        She has an experience of over 9 years and has dealt with various mental health issues such as stress at work,
+        depression, anxiety, bullying, exam stress, time management, sexual abuse, parent child conflicts, couple
+        conflicts, marital conflicts, etc.</p>
+    </div>
+    <!-- Consult Button -->
+    <button class="consult-button" onclick="openPopup()">Consult</button>
+  </div>
+
+  <!-- Popup Modal -->
+  <div id="popup" class="popup-container">
+    <div class="popup-content">
+      <h2>Consultation Details</h2>
+      <p>Doctor Name: Sonali Goswami</p>
+      <p>Location: Mira Road</p>
+      <p>Available Slots:</p>
+      <ul style=" list-style-type: none">
+        <li>Tuesday: 11:00 AM, 12:00 PM, 1:00 PM</li>
+        <li>Wednesday: 10:00 AM, 11:30 AM, 2:00 PM</li>
+        <li>Saturday: 9:00 AM, 12:00 PM</li>
+      </ul>
+      <button class="book-appointment">Book Appointment</button>
+
+      <!-- Close Popup Button inside the content -->
+      <button class="close-popup-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  <div class="profileA-cards">
+
+    <!-- Profile 2 -->
+    <div class="profileA-card">
+      <div class="profileA-header">
+        <img src="{% static 'phso2.jpg'%}" alt="ProfileA Picture" class="profileA-image">
+        <div class="profileA-info">
+          <h2 class="profileA-name">Dr. Radhika Sharma</h2>
+          <p class="profileA-role">PhD - Clinical Psychology</p>
+          <p class="profileA-department">Senior Clinical Psychologist</p>
+          <p class="profileA-location">Location Bhayandar</p>
+          <p class="profileA-location">12 Years Experience Overall</p>
+          <a href="mailto:rsharma@gmail.com" class="profileA-email">rsharma@gmail.com</a>
+        </div>
+      </div>
+      <div class="profileA-bio">
+        <p>Dr. Radhika Sharma has worked extensively with individuals experiencing severe depression, PTSD, and
+          personality disorders. She is a clinical psychologist who has taught at various universities and conducts
+          research in cognitive therapy.</p>
+        <p>Dr. Radhika Sharma’s therapeutic approach is a blend of psychodynamic therapy and cognitive-behavioral
+          techniques.Over the years, she has contributed to multiple research studies on trauma recovery and emotional
+          resilience. Her workshops on self-awareness and emotional intelligence have been widely attended by mental
+          health professionals and corporate clients alike. </p>
+        <p> Dr. Sharma also volunteers with organizations that focus on mental health awareness, particularly in rural
+          and underprivileged areas. She is known for her empathetic, non-judgmental approach, creating a safe space for
+          her clients to open up.</p>
+      </div>
+      <button class="consult-button" onclick="openPopup()">Consult</button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-container">
+      <div class="popup-content">
+        <h2>Consultation Details</h2>
+        <p>Doctor Name: Radhika Sharma</p>
+        <p>Location: Bhayandar</p>
+        <p>Available Slots:</p>
+        <ul>
+          <li>Monday: 10:00 AM, 1:00 PM, 3:00 PM</li>
+          <li>Friday: 8:00 AM, 11:30 AM, 2:00 PM</li>
+          <li>Saturday: 9:00 AM, 12:00 PM</li>
+        </ul>
+        <button class="book-appointment">Book Appointment</button>
+
+        <!-- Close Popup Button inside the content -->
+        <button class="close-popup-btn" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+
+    <!-- Profile 3 -->
+    <div class="profileA-card">
+      <div class="profileA-header">
+        <img src="{% static 'phso3.jpg'%}" alt="ProfileA Picture" class="profileA-image">
+        <div class="profileA-info">
+          <h2 class="profileA-name">Mr. Nikhil Verma</h2>
+          <p class="profileA-role">MSc - Counseling Psychology</p>
+          <p class="profileA-department">Counseling Psychologist</p>
+          <p class="profileA-location">Location Andheri</p>
+          <p class="profileA-location">8 Years Experience Overall</p>
+          <a href="mailto:nverma@gmail.com" class="profileA-email">nverma@gmail.com</a>
+        </div>
+      </div>
+      <div class="profileA-bio">
+        <p>Mr. Nikhil Verma specializes in career guidance, stress management, and cognitive-behavioral therapy (CBT).
+          He
+          has extensive experience working with young adults and professionals dealing with anxiety and
+          performance-related
+          issues.</p>
+        <p>Mr. Nikhil Verma has been instrumental in developing psychological intervention programs for schools and
+          corporate organizations. His expertise in mindfulness techniques has helped many individuals regain control
+          over their mental health.</p>
+        <p>Nikhil is passionate about empowering individuals to overcome limiting beliefs and build confidence. In
+          addition to his counseling work, he regularly conducts webinars and workshops on managing work-life balance
+          and burnout. He has been featured in several mental health podcasts and magazines, where he shares insights on
+          overcoming anxiety in high-pressure environments.</p>
+      </div>
+      <button class="consult-button" onclick="openPopup()">Consult</button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-container">
+      <div class="popup-content">
+        <h2>Consultation Details</h2>
+        <p>Doctor Name: Mr. Nikhil Verma</p>
+        <p>Location: Andheri</p>
+        <p>Available Slots:</p>
+        <ul>
+          <li>Tuesday: 10:00 AM, 12:30 PM, 1:30 PM</li>
+          <li>Thursday: 9:00 AM, 11:30 AM, 2:00 PM</li>
+          <li>Sunday: 9:00 AM, 12:00 PM</li>
+        </ul>
+        <button class="book-appointment">Book Appointment</button>
+
+        <!-- Close Popup Button inside the content -->
+        <button class="close-popup-btn" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <!-- Profile 4 -->
+    <div class="profileA-card">
+      <div class="profileA-header">
+        <img src="{% static 'phso4.jpg'%}" alt="ProfileA Picture" class="profileA-image">
+        <div class="profileA-info">
+          <h2 class="profileA-name">Ms. Anita Desai</h2>
+          <p class="profileA-role">MA - Child Psychology</p>
+          <p class="profileA-department">Child Psychologist</p>
+          <p class="profileA-location">Boriwali</p>
+          <p class="profileA-location">10 Years Experience Overall</p>
+          <a href="mailto:adesai@gmail.com" class="profileA-email">adesai@gmail.com</a>
+        </div>
+      </div>
+      <div class="profileA-bio">
+        <p>Ms. Anita Desai is a certified child psychologist focusing on developmental and behavioral disorders in
+          children.
+          She has worked with children in schools and private practice to help manage autism spectrum disorders, ADHD,
+          and
+          learning disabilities.</p>
+        <p>Ms. Anita Desai has made significant contributions to the field of child psychology through her work in early
+          intervention programs. She has collaborated with schools and non-profits to develop inclusive education
+          strategies that cater to children with special needs. </p>
+        <p>Anita is also a certified play therapist and uses art therapy as a medium to connect with her young clients.
+          Her gentle and creative methods allow children to express their feelings in non-verbal ways, which has proven
+          effective for children with communication difficulties. Her research on childhood trauma has been published in
+          leading psychology journals.</p>
+      </div>
+      <button class="consult-button" onclick="openPopup()">Consult</button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-container">
+      <div class="popup-content">
+        <h2>Consultation Details</h2>
+        <p>Doctor Name: Ms. Anita Desai</p>
+        <p>Location:Boriwali</p>
+        <p>Available Slots:</p>
+        <ul>
+          <li>Monday: 11:00 AM, 12:00 PM, 1:00 PM</li>
+          <li>Thursday: 10:00 AM, 11:30 AM, 2:00 PM</li>
+          <li>Saturday: 10:00 AM, 11:30 AM, 2:00 PM</li>
+        </ul>
+        <button class="book-appointment">Book Appointment</button>
+
+        <!-- Close Popup Button inside the content -->
+        <button class="close-popup-btn" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <!-- Profile 4 -->
+    <div class="profileA-card">
+      <div class="profileA-header">
+        <img src="{% static 'phso5.jpg'%}" alt="ProfileA Picture" class="profileA-image">
+        <div class="profileA-info">
+          <h2 class="profileA-name">Dr. Varun Kapoor</h2>
+          <p class="profileA-role">PhD - Neuropsychology</p>
+          <p class="profileA-department">Neuropsychologist</p>
+          <p class="profileA-location">Kandiwali</p>
+          <p class="profileA-location">15 Years Experience Overall</p>
+          <a href="mailto:vkapoor@gmail.com" class="profileA-email">vkapoor@gmail.com</a>
+        </div>
+      </div>
+      <div class="profileA-bio">
+        <p>Dr. Varun Kapoor is a specialist in neuropsychology and cognitive rehabilitation. His experience includes
+          working with individuals suffering from traumatic brain injury (TBI), strokes, and memory disorders. He has
+          presented his research at international conferences.</p>
+        <p>Dr. Varun Kapoor’s expertise in neuropsychology has made him one of the most sought-after professionals in
+          the field. He has worked with patients recovering from traumatic brain injuries, helping them regain cognitive
+          function and improve their quality of life</p>
+        <p>Varun is also involved in groundbreaking research on Alzheimer's disease and dementia, collaborating with
+          international research institutes to develop innovative treatment methods. His holistic approach to therapy
+          integrates cognitive training exercises, neurofeedback, and mindfulness practices. Dr. Kapoor is passionate
+          about educating the public on the importance of mental health in brain injury recovery.</p>
+      </div>
+      <button class="consult-button" onclick="openPopup()">Consult</button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-container">
+      <div class="popup-content">
+        <h2>Consultation Details</h2>
+        <p>Doctor Name:Dr. Varun Kapoor</p>
+        <p>Location:Kandiwali </p>
+        <p>Available Slots:</p>
+        <ul>
+          <li>Wednesday: 11:00 AM, 12:00 PM, 1:00 PM</li>
+          <li>Saturday: 10:00 AM, 11:30 AM, 2:00 PM</li>
+          <li>Sunday: 9:00 AM, 12:00 PM</li>
+        </ul>
+        <button class="book-appointment">Book Appointment</button>
+
+        <!-- Close Popup Button inside the content -->
+        <button class="close-popup-btn" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <!-- Profile 6 -->
+    <div class="profileA-card">
+      <div class="profileA-header">
+        <img src="{% static 'phso6.jpg'%}" alt="ProfileA Picture" class="profileA-image">
+        <div class="profileA-info">
+          <h2 class="profileA-name">Ms. Priya Sinha</h2>
+          <p class="profileA-role">MPhil - Clinical Psychology</p>
+          <p class="profileA-department">Clinical Psychologist</p>
+          <p class="profileA-location">Dahishar</p>
+          <p class="profileA-location">7 Years Experience Overall</p>
+          <a href="mailto:psinha@gmail.com" class="profileA-email">psinha@gmail.com</a>
+        </div>
+      </div>
+      <div class="profileA-bio">
+        <p>Ms. Priya Sinha specializes in family therapy and marital counseling. She has helped many couples and
+          families
+          overcome communication issues and resolve conflicts, working with clients from various cultural backgrounds.
+        </p>
+        <p>Ms. Priya Sinha’s approach to clinical psychology is deeply rooted in humanistic therapy, where the focus is
+          on personal growth and self-acceptance</p>
+        <p>She has helped countless couples navigate complex emotional issues, using evidence-based practices such as
+          emotion-focused therapy (EFT). In addition to her private practice, Priya collaborates with social welfare
+          organizations that work on improving mental health services for marginalized communities. She believes in the
+          power of emotional healing through open communication and vulnerability.</p>
+        <p>Ms. Sinha is also a certified practitioner of positive psychology and incorporates strength-based techniques
+          into her therapy sessions to foster resilience and empowerment.</p>
+      </div>
+      <button class="consult-button" onclick="openPopup()">Consult</button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-container">
+      <div class="popup-content">
+        <h2>Consultation Details</h2>
+        <p>Doctor Name:Ms. Priya Sinha</p>
+        <p>Location: Dahishar</p>
+        <p>Available Slots:</p>
+        <ul>
+          <li>Monday: 11:00 AM, 12:00 PM, 1:00 PM</li>
+          <li>Tuesday: 10:00 AM, 11:30 AM, 2:00 PM</li>
+          <li>Friday: 9:00 AM, 12:00 PM</li>
+        </ul>
+        <button class="book-appointment">Book Appointment</button>
+
+        <!-- Close Popup Button inside the content -->
+        <button class="close-popup-btn" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openPopup() {
+        document.getElementById("popup").style.display = "flex";
+    }
+    
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById("popup").style.display = "none";
+    }
+  </script>
+  {% endblock %}

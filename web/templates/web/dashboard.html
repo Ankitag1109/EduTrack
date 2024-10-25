@@ -1,0 +1,378 @@
+
+{% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-varient: #677483;
+    --color-background: #f6f6f9;
+    
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-theme {
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-varient: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+
+html {
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: .88rem;
+    background: var(--color-background);
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: .87rem;
+}
+
+h5 {
+    font-size: .77rem;
+}
+
+small {
+    font-size: .75rem;
+}
+
+.text-muted {
+    color: var(--color-info);
+}
+
+p {
+    color: var(--color-dark-varient);
+}
+
+b {
+    color: var(--color-dark);
+}
+
+.primary {
+    color: var(--color-primary);
+}
+
+.danger {
+    color: var(--color-danger);
+}
+
+.success {
+    color: var(--color-success);
+}
+
+.warning {
+    color: var(--color-warning);
+}
+
+.container12 {
+    display: grid;
+    width: 93%;
+    margin: 0 3rem;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 23rem;
+    padding-top: 4rem;
+}
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--color-light);
+    padding-bottom: 1rem;
+}
+
+.profile-photo {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--color-light);
+    transition: all 400ms ease;
+}
+
+.profile-about p {
+    padding-bottom: 1rem;
+}
+
+main {
+    margin-top: 1.4rem;
+}
+
+.subjects {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.6rem;
+}
+
+.subject-card {
+    background-color: rgb(255, 255, 255);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.subject-card:hover {
+    box-shadow: none;
+}
+
+.subject-card span {
+    background-color: var(--color-primary);
+    padding: .5rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
+.subject-card.mth span,
+.subject-card.cg span {
+    background: var(--color-danger);
+}
+
+.subject-card.cs span {
+    background: var(--color-success);
+}
+
+.announcements {
+    margin-top: 2.2rem;
+    padding-left: 1.5rem;
+}
+
+.announcements h2 {
+    margin-bottom: .8rem;
+}
+
+.updates {
+    background-color: var(--color-white);
+    padding: 1rem;
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+}
+
+.message {
+    margin-bottom: .8rem;
+    padding: 1rem;
+    border-radius: var(--border-radius-1);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.message:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 900px) {
+    .container12 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    aside.profile,
+    aside.announcements {
+        display: none;
+    }
+
+    main {
+        margin: 0;
+    }
+
+    .subjects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'web/css/attendence.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+<body class="bg-image" style="background-image: url('{% static 'background.png' %}'); background-repeat: round; background-size: cover;">
+
+    <div class="navbar-container">
+        <header class="navbar-header">
+            <nav class="navbar">
+                <div class="navbar-left">
+                    <img src="{%static 'logoAnk.png' %}" alt="logo" class="navbar-logo">
+                </div>
+                <div class="navbar-right">
+                    <ul class="navbar-links">
+                         <li class="navbar-item">
+                            <a href="{% url 'dashboard' %}" class="navbar-link">Dashboard</a>
+                        </li> </li> <li class="navbar-item">
+                            <a href="{% url 'examination' %}" class="navbar-link"> {{ member.firstname }}</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-action">
+                        <a href="{% url 'firstpage' %}" class="navbar-btn-login">Logout</a>
+                    </div>
+                    
+                </div>
+            </nav>
+        </header>
+    </div>
+    </div>
+    <div class="container12">
+        <aside class="profile">
+            <div class="profile-header">
+                <div class="profile-photo">
+                    <img src="{%static 'user.jpg'%}" alt="Profile photo of Ayushree">
+                </div>
+                <div class="profile-info">
+                    <p>Hey, <b>Student</b></p>
+                    <small class="text-muted">12102030</small>
+                </div>
+            </div>
+            <div class="profile-about">
+                <h5>Course</h5>
+                <p>BTech. Information Technology</p>
+                <h5>DOB</h5>
+                <p>17-Jun-2004</p>
+                <h5>Contact</h5>
+                <p>1234567890</p>
+                <h5>Email</h5>
+                <p>student@gmail.com</p>
+                <h5>Address</h5>
+                <p>Mumbai, Maharashtra</p>
+            </div>
+        </aside>
+        <main>
+            <h1>Subjects</h1>
+            <section class="subjects">
+                <div class="subject-card eg">
+                    <span class="material-icons-sharp">architecture</span>
+                    <h3>Internet Programming</h3>
+                </div>
+                <div class="subject-card mth">
+                    <span class="material-icons-sharp">functions</span>
+                    <h3>Computer Network Security</h3>
+                </div>
+                <div class="subject-card cs">
+                    <span class="material-icons-sharp">computer</span>
+                    <h3>Software Engineering</h3>
+                </div>
+                <div class="subject-card cg">
+                    <span class="material-icons-sharp">dns</span>
+                    <h3>Advance DSA</h3>
+                </div>
+                <div class="subject-card net">
+                    <span class="material-icons-sharp">router</span>
+                    <h3>EEB</h3>
+                </div>
+                <div class="subject-card net">
+                    <span class="fa-brands fa-slack"></span>
+                    <h3>PCE</h3>
+                </div>
+                <div class="subject-card cg">
+                    <span class="fa-brands fa-drupal"></span>
+                    <h3>DevOps Lab</h3>
+                </div>
+                <div class="subject-card cs">
+                    <span class="fa-brands fa-cloudflare"></span>
+                    <h3>Advanced DevOps Lab</h3>
+                </div>
+                <div class="subject-card cg">
+                    <span class="fa-brands fa-codepen"></span>
+                    <h3>SL Lab</h3>
+                </div>
+                <div class="subject-card net">
+                    <span class="fa-brands fa-html5"></span>
+                    <h3>IP Lab</h3>
+                </div>
+            </section>
+        </main>
+        <aside class="announcements">
+            <h2>Announcements</h2>
+            <div class="updates">
+                <div class="message">
+                    <p><b>Academic:</b> Be prepared for the surprise test for Upcoming IAT2</p>
+                    <small class="text-muted">2 Minutes Ago</small>
+                </div>
+                <div class="message">
+                    <p><b>Assignments:</b> Get your assignments checked by today itself</p>
+                    <small class="text-muted">10 Minutes Ago</small>
+                </div>
+                <div class="message">
+                    <p><b>Co-Curriculum:</b> Be prepared for the Upcoming Meta-Summit 2024</p>
+                    <small class="text-muted">Yesterday</small>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <footer class="app-footer">
+        <div class="containerin">
+            <div class="footer-content">
+                <div class="app-info">
+                    <h2>EduTrack </h2>
+                    <p>Leveraging Technology To Combat Student Dropout</p>
+                </div>
+            </div>
+            <div class="social-icons">
+                <a href="www.facebook.com"><img src="https://img.icons8.com/fluent/50/000000/facebook-new.png" /></a>
+                <a href="www.istagram.com"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" /></a>
+                <a href="www.tweeter.com"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" /></a>
+                           </div>
+            <div class="copyright">
+                <p class="copyright-text">
+                    &copy; 2023 All roghts reserved ||Designed By three friends Ankita Gaikwad, Ayushree More, Meet Beewal
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><!-- Option 1: Bootstrap Bundle with Popper -->

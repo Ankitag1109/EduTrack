@@ -1,0 +1,76 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body %}
+
+
+
+
+<main style="margin: 0 ;" >
+    <div class="timetable active" id="timetable">
+        <div>
+            <h2> TIMETABLE (SEM-5)</h2>
+        </div>
+        <table >
+            <caption1>TIME TABLE</caption1>
+            <tr>
+                <th>Day/Period</th>
+                <th>I<br>9:15-10:15</th>
+                <th>II<br>10:15-11.15</th>
+                <th>III<br>11.15-12:15</th>
+                <th>12:15-12:45</th>
+                <th>IV<br>12:45-1:45</th>
+                <th>V <br>1:45-2:45</th>
+                <th>VI <br>2:45-3:45</th>
+                <th>VII <br>3:45-4:45</th>
+            </tr>
+            <tr>
+                <td class="Data">Monday</td>
+                <td>IP</td>
+                <td colspan="2">PCE</td>
+                <td rowspan="5">Lunch</td>
+                <td>SE</td>
+                <td >LIB</td>
+                <td colspan="2">Major Minor</td>
+            </tr>
+    
+            <tr>
+                <td class="Data">TUESDAY</td>
+                <td >CNS</td>
+                <td>SE</td>
+                <td>EEB</td>
+                <td colspan="2">Adv.Devops</td>
+                <td colspan="2">Miniproject</td>
+            </tr>
+    
+            <tr>
+                <td class="Data">Wednesday</td>
+                <td>IP</td>
+                <td>ADSA</td>
+                <td>CNS</td>
+                <td colspan="2">Devops</td>
+                <td>PCE</td>
+                <td>EEB</td>
+            </tr>
+    
+            <tr>
+                <td class="Data">Thursday</td>
+                <td colspan="2">IP</td>
+                <td>SE</td>
+                <td>EEB</td>
+                <td>CNS</td>
+                <td>ADSA</td>
+                <td>Activity hour</td>
+            </tr>
+    
+            <tr>
+                <td class="Data">Friday</td>
+                <td>PCE</td>
+                <td>ADSA</td>
+                <td>IP</td>
+                <td colspan="2">SL</td>
+                <td colspan="2">Mini project</td>
+            </tr>
+        </table>
+    </div>
+</main>
+{% endblock %}
